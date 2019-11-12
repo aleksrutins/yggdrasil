@@ -18,9 +18,9 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
   console.log(`Creating ${process.env.HOME}/node-executables`);
   execSync("mkdir -p $HOME/node-executables");
   console.log("Initializing with yarn init.");
-  execSync("yarn init -yp", {cwd: ne});
+  execSync("npm init -y", {cwd: ne});
   console.log("Installing david as a package updater.");
-  execSync("yarn add david", {cwd: ne})
+  execSync("npm i david", {cwd: ne})
   fs.writeFileSync(path.join(process.env.HOME, ".profile"), "export PATH=$PATH:$HOME/node-executables/node_modules/.bin", {flags: "as"});
   console.log("Reloading configuration");
   execFile(path.join(process.env.HOME, ".profile"));
@@ -31,7 +31,7 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
     describe: "The package to be installed"
   });
 }, (argv) => {
-  let yarn = spawnConnect("yarn", ["add", argv.pkg], {cwd: ne});
+  let yarn = spawnConnect("npm", ["install", argv.pkg], {cwd: ne});
   yarn.on("exit", process.exit);
 }).command("remove [pkg]", "Remove pkg.", (yargs) => {
   yargs.positional("pkg", {
@@ -39,7 +39,7 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
     describe: "The package to be removed."
   });
 }, (argv) => {
-  let yarn = spawnConnect("yarn", ["remove", argv.pkg], {cwd: ne});
+  let yarn = spawnConnect("npm", ["uninstall", argv.pkg], {cwd: ne});
   yarn.on("exit", process.exit);
 }).command("upgrade [pkg]", "Upgrade pkg, or all packages, using david", (yargs) => {
   yargs.positional("pkg", {
