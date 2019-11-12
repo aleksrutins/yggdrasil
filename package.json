@@ -1,0 +1,13 @@
+{
+  "name": "yggdrasil",
+  "version": "1.0.0",
+  "description": "A non-root, global, yarn-based package manager for node.js CLI tools.",
+  "main": "bin/yggdrasil",
+  "repository": "git@github.com:munchkinhalfling/yggdrasil.git",
+  "author": "munchkinhalfling <munchkinhalfling@pm.me>",
+  "license": "GPL",
+  "dependencies": {
+    "command": "^0.0.5",
+    "yargs": "^14.2.0"
+  }
+}
