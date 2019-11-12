@@ -1,16 +1,19 @@
 #!/usr/bin/env node
-const command = require("command");
 const path = require("path");
 const fs = require("fs");
 const {execFile, spawn, execSync} = require("child_process");
 const ne = path.join(process.env.HOME, "node-executables");
 var pwd = process.env.PWD;
-
+const writeTo = function(stream) {
+	return function(data) {
+		stream.write(data);
+	};
+};
 function spawnConnect(cmd, args, opts) {
   let commd = spawn(cmd, args, opts);
-  commd.stdout.on("data", command.writeTo(process.stdout));
-  commd.stderr.on("data", command.writeTo(process.stderr));
-  process.stdin.on("data", command.writeTo(commd.stdin));
+  commd.stdout.on("data", writeTo(process.stdout));
+  commd.stderr.on("data", writeTo(process.stderr));
+  process.stdin.on("data", writeTo(commd.stdin));
   return commd;
 }
 
