@@ -24,7 +24,7 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
   fs.writeFileSync(path.join(process.env.HOME, ".profile"), "export PATH=$PATH:$HOME/node-executables/node_modules/.bin", {flags: "as"});
   console.log("Reloading configuration");
   execFile(path.join(process.env.HOME, ".profile"));
-  console.log("Done! be sure to add the yggdrasil/bin directory to your PATH.")
+  console.log("Done!")
 }).command("install [pkg]", "Install pkg using yarn.", (yargs) => {
   yargs.positional('pkg', {
     type: "string",
