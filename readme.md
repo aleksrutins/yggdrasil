@@ -10,7 +10,7 @@ ygg [command]
 
 Commands:
   ygg init           Initialize ~/node-executables
-  ygg install [pkg]  Install pkg using yarn.
+  ygg install [pkg]  Install pkg.
   ygg remove [pkg]   Remove pkg.
   ygg upgrade [pkg]  Upgrade pkg, or all packages, using david
 
