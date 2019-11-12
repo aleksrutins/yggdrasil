@@ -4,6 +4,7 @@
   "description": "A non-root, global, yarn-based package manager for node.js CLI tools.",
   "main": "bin/yggdrasil",
   "repository": "git@github.com:munchkinhalfling/yggdrasil.git",
+  "homepage": "https://munchkinhalfling.github.io/yggdrasil",
   "author": "munchkinhalfling <munchkinhalfling@pm.me>",
   "license": "GPL",
   "dependencies": {
