@@ -18,3 +18,5 @@ Options:
   --help     Show help                                                 [boolean]
   --version  Show version number                                       [boolean]
 ```
+### Prerequisites
+You need to have [Node.JS](https://nodejs.org) and [Yarn](https://yarnpkg.org) installed.
