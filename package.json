@@ -1,5 +1,5 @@
 {
-  "name": "yggdrasil",
+  "name": "yggdrasil-pm",
   "version": "1.0.0",
   "description": "A non-root, global, yarn-based package manager for node.js CLI tools.",
   "main": "bin/yggdrasil",
