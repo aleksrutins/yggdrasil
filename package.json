@@ -12,6 +12,7 @@
     "yargs": "^14.2.0"
   },
   "bin": {
-    "ygg": "./src/main.js"
+    "ygg": "./src/main.js",
+    "yggdrasil": "./src/main.js"
   }
 }
