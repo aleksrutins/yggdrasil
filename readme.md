@@ -2,7 +2,8 @@
 ## The Norse tree of life, connecting the nine worlds
 ## or  a global, yarn-based, no-root package manager.
 ### Installation
-Run `ygg init` or `yggdrasil init` to create the ~/node-executables folder and add it to your PATH and source your ~/.profile.
+Install it using `npm i -g yggdrasil-pm`.
+Then, run `ygg init` or `yggdrasil init` to create the ~/node-executables folder and add it to your PATH and source your ~/.profile.
 ### Usage
 ```
 ygg [command]
