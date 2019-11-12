@@ -48,5 +48,6 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
     describe: "(optional) Package to upgrade"
   });
 }, (argv) => {
-  let david = spawnConnect("david", ["update", argv.pkg]);
+  let david = spawnConnect("david", ["update", argv.pkg], {cwd: ne});
+  david.on("exit", process.exit);
 }).argv;
