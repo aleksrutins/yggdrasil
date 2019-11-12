@@ -9,5 +9,8 @@
   "dependencies": {
     "command": "^0.0.5",
     "yargs": "^14.2.0"
+  },
+  "bin": {
+    "ygg": "./src/main.js"
   }
 }
