@@ -20,7 +20,7 @@ function spawnConnect(cmd, args, opts) {
 require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {}, async (argv) => {
   console.log(`Creating ${process.env.HOME}/node-executables`);
   execSync("mkdir -p $HOME/node-executables");
-  console.log("Initializing with yarn init.");
+  console.log("Initializing with npm init.");
   execSync("npm init -y", {cwd: ne});
   console.log("Installing david as a package updater.");
   execSync("npm i david", {cwd: ne})
@@ -28,7 +28,7 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
   console.log("Reloading configuration");
   execFile(path.join(process.env.HOME, ".profile"));
   console.log("Done!")
-}).command("install [pkg]", "Install pkg using yarn.", (yargs) => {
+}).command("install [pkg]", "Install pkg.", (yargs) => {
   yargs.positional('pkg', {
     type: "string",
     describe: "The package to be installed"
