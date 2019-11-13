@@ -38,6 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var path_1 = require("path");
+var fs_1 = require("fs");
 var child_process_1 = require("child_process");
 var ne = path_1["default"].join(process.env.HOME, "node-executables");
 var pwd = process.env.PWD;
@@ -61,7 +62,7 @@ require("yargs").command("init", "Initialize ~/node-executables", function (yarg
         child_process_1.execSync("npm init -y", { cwd: ne });
         console.log("Installing david as a package updater.");
         child_process_1.execSync("npm i david", { cwd: ne });
-        fs.writeFileSync(path_1["default"].join(process.env.HOME, ".profile"), "export PATH=$PATH:$HOME/node-executables/node_modules/.bin", { flags: "as" });
+        fs_1["default"].writeFileSync(path_1["default"].join(process.env.HOME, ".profile"), "export PATH=$PATH:$HOME/node-executables/node_modules/.bin", { flags: "as" });
         console.log("Reloading configuration");
         child_process_1.execFile(path_1["default"].join(process.env.HOME, ".profile"));
         console.log("Done!");
