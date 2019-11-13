@@ -1,15 +1,14 @@
-#!/usr/bin/env node
-const path = require("path");
-const fs = require("fs");
-const {execFile, spawn, execSync} = require("child_process");
+#/usr/bin/env node
+import path from "path";
+import {execFile, spawn, execSync} from "child_process";
 const ne = path.join(process.env.HOME, "node-executables");
 var pwd = process.env.PWD;
-const writeTo = function(stream) {
-	return function(data) {
+const writeTo = stream => {
+	return function(data: string): void {
 		stream.write(data);
 	};
 };
-function spawnConnect(cmd, args, opts) {
+function spawnConnect(cmd: string, args: string[], opts: object) {
   let commd = spawn(cmd, args, opts);
   commd.stdout.on("data", writeTo(process.stdout));
   commd.stderr.on("data", writeTo(process.stderr));
@@ -27,7 +26,7 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
   fs.writeFileSync(path.join(process.env.HOME, ".profile"), "export PATH=$PATH:$HOME/node-executables/node_modules/.bin", {flags: "as"});
   console.log("Reloading configuration");
   execFile(path.join(process.env.HOME, ".profile"));
-  console.log("Done!")
+  console.log("Done!");
 }).command("install [pkg]", "Install pkg.", (yargs) => {
   yargs.positional('pkg', {
     type: "string",
