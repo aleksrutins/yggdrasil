@@ -44,7 +44,7 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
 }, (argv) => {
   let yarn = spawnConnect("npm", ["uninstall", argv.pkg], {cwd: ne});
   yarn.on("exit", process.exit);
-}).command("upgrade [pkg]", "Upgrade pkg, or all packages, using david", (yargs) => {
+}).command("update [pkg]", "Upgrade pkg, or all packages, using david", (yargs) => {
   yargs.positional("pkg", {
     type: "string",
     default: "",
