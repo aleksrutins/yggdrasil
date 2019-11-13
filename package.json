@@ -7,7 +7,7 @@
   "homepage": "https://munchkinhalfling.github.io/yggdrasil",
   "author": "munchkinhalfling <munchkinhalfling@pm.me>",
   "license": "GPL",
-  "commands": {
+  "scripts": {
     "test": "echo No tests yet"
   },
   "dependencies": {
