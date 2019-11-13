@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -36,8 +37,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-/usr/bin / env;
-node;
 var path_1 = require("path");
 var child_process_1 = require("child_process");
 var ne = path_1["default"].join(process.env.HOME, "node-executables");

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import path from "path";
+import fs from 'fs';
 import {execFile, spawn, execSync} from "child_process";
 const ne = path.join(process.env.HOME, "node-executables");
 var pwd = process.env.PWD;
