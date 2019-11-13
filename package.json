@@ -9,7 +9,7 @@
   "license": "GPL",
   "scripts": {
     "preversion": "tsc && git add --all",
-    "version": "git commit -m \"NPM version $(npm view yggdrasil-pm version --no-ham-it-up)\"",
+    "version": "git commit -m \"NPM version $(npm view . version --no-ham-it-up)\"",
     "postversion": "git push && npm publish"
   },
   "dependencies": {
