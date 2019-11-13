@@ -8,7 +8,7 @@
   "author": "munchkinhalfling <munchkinhalfling@pm.me>",
   "license": "GPL",
   "scripts": {
-    "preversion": "tsc && git add --all && git commit -m $message",
+    "preversion": "tsc && git add --all && git commit -m \"NPM version $(npm view yggdrasil-pm version --no-ham-it-up)\"",
     "version": "",
     "postversion": "git push && npm publish"
   },
