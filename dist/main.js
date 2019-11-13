@@ -62,7 +62,7 @@ require("yargs").command("init", "Initialize ~/node-executables", function (yarg
         child_process_1.execSync("npm init -y", { cwd: ne });
         console.log("Installing david as a package updater.");
         child_process_1.execSync("npm i david", { cwd: ne });
-        fs.writeFileSync(path.join(process.env.HOME, ".profile"), "export PATH=$PATH:$HOME/node-executables/node_modules/.bin", { flags: "as" });
+        fs.writeFileSync(path.join(process.env.HOME, ".profile"), "export PATH=$PATH:$HOME/node-executables/node_modules/.bin", { flag: "as" });
         console.log("Reloading configuration");
         child_process_1.execFile(path.join(process.env.HOME, ".profile"));
         console.log("Done!");
