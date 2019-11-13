@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "outFile": "dist/main.js",
+    "sourceMap": true,
+    "noImplicitAny": true
+  },
+  "files": {
+    "src/*"
+  }
+}

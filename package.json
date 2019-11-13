@@ -8,13 +8,15 @@
   "author": "munchkinhalfling <munchkinhalfling@pm.me>",
   "license": "GPL",
   "scripts": {
-    "test": "echo No tests yet"
+    "preversion": "tsc && git add -a && git commit -m $message",
+    "version": "",
+    "postversion": "git push && npm publish"
   },
   "dependencies": {
     "yargs": "^14.2.0"
   },
   "bin": {
-    "ygg": "./src/main.js",
-    "yggdrasil": "./src/main.js"
+    "ygg": "./dist/main.js",
+    "yggdrasil": "./dist/main.js"
   }
 }
