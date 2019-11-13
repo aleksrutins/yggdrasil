@@ -2,7 +2,7 @@
 import * as path from "path";
 import * as fs from 'fs';
 import {execFile, spawn, execSync} from "child_process";
-import * as spawn from "@munchkinhalfling/spawn.js";
+import * as spawnjs from "@munchkinhalfling/spawn.js";
 
 const ne = path.join(process.env.HOME, "node-executables");
 var pwd = process.env.PWD;
@@ -23,7 +23,7 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
     describe: "The package to be installed"
   });
 }, (argv) => {
-  let yarn = spawn.spawnConnect("npm", ["install", argv.pkg], {cwd: ne});
+  let yarn = spawnjs.spawnConnect("npm", ["install", argv.pkg], {cwd: ne});
   yarn.on("exit", process.exit);
 }).command("remove [pkg]", "Remove pkg.", (yargs) => {
   yargs.positional("pkg", {
@@ -31,7 +31,7 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
     describe: "The package to be removed."
   });
 }, (argv) => {
-  let yarn = spawn.spawnConnect("npm", ["uninstall", argv.pkg], {cwd: ne});
+  let yarn = spawnjs.spawnConnect("npm", ["uninstall", argv.pkg], {cwd: ne});
   yarn.on("exit", process.exit);
 }).command("update [pkg]", "Upgrade pkg, or all packages, using david", (yargs) => {
   yargs.positional("pkg", {
@@ -40,8 +40,8 @@ require("yargs").command("init", "Initialize ~/node-executables", (yargs) => {},
     describe: "(optional) Package to upgrade"
   });
 }, (argv) => {
-  let david = spawn.spawnConnect("david", ["update", argv.pkg], {cwd: ne});
+  let david = spawnjs.spawnConnect("david", ["update", argv.pkg], {cwd: ne});
   david.on("exit", process.exit);
 }).command("check-update", "Check for updates using david", (yargs) => {}, argv => {
-	spawn.spawnConnect("david", [], {cwd: ne}).on("exit", process.exit);
+	spawnjs.spawnConnect("david", [], {cwd: ne}).on("exit", process.exit);
 }).argv;

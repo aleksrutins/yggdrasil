@@ -42,18 +42,6 @@ var fs = require("fs");
 var child_process_1 = require("child_process");
 var ne = path.join(process.env.HOME, "node-executables");
 var pwd = process.env.PWD;
-var writeTo = function (stream) {
-    return function (data) {
-        stream.write(data);
-    };
-};
-function spawnConnect(cmd, args, opts) {
-    var commd = child_process_1.spawn(cmd, args, opts);
-    commd.stdout.on("data", writeTo(process.stdout));
-    commd.stderr.on("data", writeTo(process.stderr));
-    process.stdin.on("data", writeTo(commd.stdin));
-    return commd;
-}
 require("yargs").command("init", "Initialize ~/node-executables", function (yargs) { }, function (argv) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         console.log("Creating " + process.env.HOME + "/node-executables");
@@ -74,7 +62,7 @@ require("yargs").command("init", "Initialize ~/node-executables", function (yarg
         describe: "The package to be installed"
     });
 }, function (argv) {
-    var yarn = spawnConnect("npm", ["install", argv.pkg], { cwd: ne });
+    var yarn = child_process_1.spawn.spawnConnect("npm", ["install", argv.pkg], { cwd: ne });
     yarn.on("exit", process.exit);
 }).command("remove [pkg]", "Remove pkg.", function (yargs) {
     yargs.positional("pkg", {
@@ -82,7 +70,7 @@ require("yargs").command("init", "Initialize ~/node-executables", function (yarg
         describe: "The package to be removed."
     });
 }, function (argv) {
-    var yarn = spawnConnect("npm", ["uninstall", argv.pkg], { cwd: ne });
+    var yarn = child_process_1.spawn.spawnConnect("npm", ["uninstall", argv.pkg], { cwd: ne });
     yarn.on("exit", process.exit);
 }).command("update [pkg]", "Upgrade pkg, or all packages, using david", function (yargs) {
     yargs.positional("pkg", {
@@ -91,9 +79,9 @@ require("yargs").command("init", "Initialize ~/node-executables", function (yarg
         describe: "(optional) Package to upgrade"
     });
 }, function (argv) {
-    var david = spawnConnect("david", ["update", argv.pkg], { cwd: ne });
+    var david = child_process_1.spawn.spawnConnect("david", ["update", argv.pkg], { cwd: ne });
     david.on("exit", process.exit);
 }).command("check-update", "Check for updates using david", function (yargs) { }, function (argv) {
-    spawnConnect("david", [], { cwd: ne }).on("exit", process.exit);
+    child_process_1.spawn.spawnConnect("david", [], { cwd: ne }).on("exit", process.exit);
 }).argv;
 //# sourceMappingURL=main.js.map
