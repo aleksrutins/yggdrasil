@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "13.1"
+deploy:
+  provider: npm
+  email: munchkinhalfling@pm.me
+  api_key:
+    secure: XpgvegB1u9mktmiZ74ywDcHvqqdl+KQqLUCPXJcEAfGGyXQQXnmAvqkBy7YhfpyffPSAww3KNG/CYmGKvEEGezHsM8rTQafKWDQVYKgJ6V7gjHXOWLtpGOE+fO1NDAxSnbNQrVF10ysbgSWzNyzuW4jv2gdXOyloKolywUlVJTxR4LICgylJ0UW04wKA8fsospgfOMIc5TDp13pv5e9NKD9EjOY4EopgCQ7iXwzRrEi6o+jX/FgmXv9YblTq/5KqvlMLpinEif1VVoGBZL6epwgwtN/uXAM0Y0EVzXkr0ve/nwt+25QTFYkheKUqk11MD3aWukzjlozJkG0kpHV+gq0qN35PHFSd56CpFm8o/iJ0tHhcrPDCB36GachJyDfbg/tqn7xHaXXVPo3ok2qaLE9U0Y+dBnhBZ794g4FsZ9sEHGx0wityRwRCxKGzVtokUxoQD711wwNQJdAVncH9BYnqoKHRN0KTIgI8UXaiHrzPmjlrX25NZvFSNImHu3K48kVF76NxGozuwIv9GT5u+Yp6GKjMH4mMBOqjQBkGuaPOvylroN/R/OHIr91qE/lYFdepvOqPjRK/RaKzUOPZmzfS1DNBAgo4HE1TZV/sur6078c0U/QB5RHG9Yz4dCcYo8hYnK2JPwbx3X1WfB0K/8q2UcK/FZDan5pZM3cIoq4=
+  on:
+    repo: munchkinhalfling/yggdrasil
