@@ -1,4 +1,4 @@
-#/usr/bin/env node
+#!/usr/bin/env node
 import path from "path";
 import {execFile, spawn, execSync} from "child_process";
 const ne = path.join(process.env.HOME, "node-executables");

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,11 +35,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
-var path = require("path");
-var fs = require("fs");
-var _a = require("child_process"), execFile = _a.execFile, spawn = _a.spawn, execSync = _a.execSync;
-var ne = path.join(process.env.HOME, "node-executables");
+exports.__esModule = true;
+/usr/bin / env;
+node;
+var path_1 = require("path");
+var child_process_1 = require("child_process");
+var ne = path_1["default"].join(process.env.HOME, "node-executables");
 var pwd = process.env.PWD;
 var writeTo = function (stream) {
     return function (data) {
@@ -47,23 +48,23 @@ var writeTo = function (stream) {
     };
 };
 function spawnConnect(cmd, args, opts) {
-    var commd = spawn(cmd, args, opts);
+    var commd = child_process_1.spawn(cmd, args, opts);
     commd.stdout.on("data", writeTo(process.stdout));
     commd.stderr.on("data", writeTo(process.stderr));
     process.stdin.on("data", writeTo(commd.stdin));
     return commd;
 }
-require("yargs").command("init", "Initialize ~/node-executables", function (yargs) { }, function (argv) { return __awaiter(_this, void 0, void 0, function () {
+require("yargs").command("init", "Initialize ~/node-executables", function (yargs) { }, function (argv) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         console.log("Creating " + process.env.HOME + "/node-executables");
-        execSync("mkdir -p " + ne);
+        child_process_1.execSync("mkdir -p " + ne);
         console.log("Initializing with npm init.");
-        execSync("npm init -y", { cwd: ne });
+        child_process_1.execSync("npm init -y", { cwd: ne });
         console.log("Installing david as a package updater.");
-        execSync("npm i david", { cwd: ne });
-        fs.writeFileSync(path.join(process.env.HOME, ".profile"), "export PATH=$PATH:$HOME/node-executables/node_modules/.bin", { flags: "as" });
+        child_process_1.execSync("npm i david", { cwd: ne });
+        fs.writeFileSync(path_1["default"].join(process.env.HOME, ".profile"), "export PATH=$PATH:$HOME/node-executables/node_modules/.bin", { flags: "as" });
         console.log("Reloading configuration");
-        execFile(path.join(process.env.HOME, ".profile"));
+        child_process_1.execFile(path_1["default"].join(process.env.HOME, ".profile"));
         console.log("Done!");
         return [2 /*return*/];
     });
