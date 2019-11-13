@@ -14,9 +14,11 @@
   },
   "dependencies": {
     "@munchkinhalfling/spawn.js": "0.0.2",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
     "@types/node": "^12.12.7",
     "typescript": "^3.7.2",
-    "yargs": "^14.2.0"
   },
   "bin": {
     "ygg": "./dist/main.js",
