@@ -8,7 +8,7 @@
   "author": "munchkinhalfling <munchkinhalfling@pm.me>",
   "license": "GPL",
   "scripts": {
-    "preversion": "tsc && git add -a && git commit -m $message",
+    "preversion": "tsc && git add --all && git commit -m $message",
     "version": "",
     "postversion": "git push && npm publish"
   },
