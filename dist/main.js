@@ -40,6 +40,7 @@ exports.__esModule = true;
 var path = require("path");
 var fs = require("fs");
 var child_process_1 = require("child_process");
+var spawnjs = require("@munchkinhalfling/spawn.js");
 var ne = path.join(process.env.HOME, "node-executables");
 var pwd = process.env.PWD;
 require("yargs").command("init", "Initialize ~/node-executables", function (yargs) { }, function (argv) { return __awaiter(void 0, void 0, void 0, function () {
@@ -62,7 +63,7 @@ require("yargs").command("init", "Initialize ~/node-executables", function (yarg
         describe: "The package to be installed"
     });
 }, function (argv) {
-    var yarn = child_process_1.spawn.spawnConnect("npm", ["install", argv.pkg], { cwd: ne });
+    var yarn = spawnjs.spawnConnect("npm", ["install", argv.pkg], { cwd: ne });
     yarn.on("exit", process.exit);
 }).command("remove [pkg]", "Remove pkg.", function (yargs) {
     yargs.positional("pkg", {
@@ -70,7 +71,7 @@ require("yargs").command("init", "Initialize ~/node-executables", function (yarg
         describe: "The package to be removed."
     });
 }, function (argv) {
-    var yarn = child_process_1.spawn.spawnConnect("npm", ["uninstall", argv.pkg], { cwd: ne });
+    var yarn = spawnjs.spawnConnect("npm", ["uninstall", argv.pkg], { cwd: ne });
     yarn.on("exit", process.exit);
 }).command("update [pkg]", "Upgrade pkg, or all packages, using david", function (yargs) {
     yargs.positional("pkg", {
@@ -79,9 +80,9 @@ require("yargs").command("init", "Initialize ~/node-executables", function (yarg
         describe: "(optional) Package to upgrade"
     });
 }, function (argv) {
-    var david = child_process_1.spawn.spawnConnect("david", ["update", argv.pkg], { cwd: ne });
+    var david = spawnjs.spawnConnect("david", ["update", argv.pkg], { cwd: ne });
     david.on("exit", process.exit);
 }).command("check-update", "Check for updates using david", function (yargs) { }, function (argv) {
-    child_process_1.spawn.spawnConnect("david", [], { cwd: ne }).on("exit", process.exit);
+    spawnjs.spawnConnect("david", [], { cwd: ne }).on("exit", process.exit);
 }).argv;
 //# sourceMappingURL=main.js.map
