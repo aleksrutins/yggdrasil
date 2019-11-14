@@ -25,3 +25,5 @@ Options:
   --help     Show help                                                 [boolean]
   --version  Show version number                                       [boolean]
 ```
+### Looking for a JS API?
+[gi-joe](https://npmjs.com/package/gi-joe) is the package for you. It does, however, need yggdrasil pre-installed (it does not automatically install it) on the machine you are running it on.
