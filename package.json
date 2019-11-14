@@ -1,6 +1,6 @@
 {
   "name": "yggdrasil-pm",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "A non-root, global, yarn-based package manager for node.js CLI tools.",
   "main": "bin/yggdrasil",
   "repository": "git@github.com:munchkinhalfling/yggdrasil.git",
