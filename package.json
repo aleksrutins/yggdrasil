@@ -13,7 +13,7 @@
     "postversion": "git push && npm publish"
   },
   "dependencies": {
-    "@munchkinhalfling/spawn.js": "0.0.2",
+    "@munchkinhalfling/spawn.js": "0.0.4",
     "yargs": "^14.2.0"
   },
   "devDependencies": {
